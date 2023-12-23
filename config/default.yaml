@@ -1,0 +1,39 @@
+http:
+  authTokenHeaderName: X-API-KEY
+  authToken: a8d6ge7d-5tsa-8d9c-m3b2-30e21c0e9564
+# add the APIs here which are open or don't need validation
+
+db:
+  username: "scaledapps"
+  password: "P@55w0rd"
+  port: 1433
+  dialect: "mssql"
+  database: "scaledapps-db"
+  host: "scaledapps.database.windows.net"
+
+protectedRoutes:
+  [
+    { path: "user/profile", method: "GET" },
+    { path: "serviceRequests/:srId", method: "GET" },
+    { path: "serviceRequests/", method: "POST" },
+    { path: "serviceRequests/:srId", method: "PUT" },
+    { path: "serviceRequests/:srId/logs", method: "GET" },
+    { path: "serviceRequests/:srId/logs", method: "POST" },
+    { path: "serviceRequests/:srId/documents", method: "POST" },
+    { path: "serviceRequests/:srId/documents", method: "GET" },
+    { path: "properties/", method: "GET" },
+    { path: "properties/", method: "POST" },
+    { path: "properties/managers", method: "GET" },
+    { path: "properties/propertiesByOwner", method: "GET" },
+    { path: "properties/propertiesByManager", method: "GET" },
+    { path: "properties/:propertyId/manager", method: "POST" },
+    { path: "properties/:propertyId/serviceRequests", method: "GET" },
+    { path: "reminders", method: "POST" },
+    { path: "reminders/:id", method: "GET" },
+    { path: "properties/avg", method: "GET" },
+    { path: "properties/dash", method: "GET" },
+    { path: "users/total", method: "GET" },
+    { path: "properties/deactivateManager/:pmId", method: "PUT" },
+  ]
+
+allowedFileExtensions: [".pdf", ".docx", ".jpeg", ".png", ".jpg", ".txt"]
